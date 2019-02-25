@@ -1,0 +1,61 @@
+<div id="form">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <form (ngSubmit)="onSubmit()">
+          <div class="row">
+            <div class="col-12">
+              <div class="form-group">
+                <label>Post Title</label>
+                <input [(ngModel)]="post.title" name="title" class="form-control">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <div class="form-group">
+                <label>Image Link</label>
+                <input [(ngModel)]="post.postImage" name="postImage" class="form-control">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <div class="form-group">
+                <label>Post Content</label>
+                <textarea [(ngModel)]="post.content" rows="8" cols="50" name="content" class="form-control"></textarea>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <div class="form-group">
+                <label>Post Author</label>
+                <input [(ngModel)]="post.author" name="author" class="form-control">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <div class="form-group">
+                <label>Category</label>
+                <select required class="form-control register-input" [(ngModel)]="post.category" name="category">
+                  <option selected></option>
+                  <option value="Filmes">Filmes</option>
+                  <option value="Música">Música</option>
+                  <option value="Paternidade">Paternidade</option>
+                  <option value="Series">Series</option>
+                  <option value="Cotidiano">Cotidiano</option>
+                  <option value="Sem Categoria">Sem Categoria</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="col-12">
+            <input type="submit" class="btn btn-primary" value="Submit">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

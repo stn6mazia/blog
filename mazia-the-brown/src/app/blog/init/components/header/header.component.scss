@@ -1,0 +1,26 @@
+@import '../../../shared/scss/texts_styles.scss';
+@import '../../../shared/scss/default-colors.scss';
+
+#header {
+    background-color: $desfault-darkness-blue;
+    color: $default-light-gray;
+    padding-top: 1rem;
+}
+
+.blog-title {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.menu-item {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.menu-item {
+    color: $default-light-gray
+}
+
+.blog-title {
+    color: $default-light-gray;
+}

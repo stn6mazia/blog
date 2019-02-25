@@ -1,0 +1,67 @@
+@import '../../../shared/scss/default-colors.scss';
+@import '../../../shared/scss/texts_styles';
+
+.box {
+    border-radius: 1rem;;
+    padding: 2rem 3rem 2rem 3rem;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    background-color: $default-light-gray;
+}
+
+.box:first-child {
+    margin-top: 0;
+}
+
+.box:last-child {
+    margin-bottom: 0;
+}
+
+.post-title {
+    font-size: 3rem;
+}
+
+.post-content {
+    font-size: 2rem;
+}
+
+.poster {
+    font-size: 1.5rem;
+}
+
+.category {
+    font-size: 1.5rem;
+}
+
+.like-btn {
+    width: 70px;
+    height: 70px;
+    padding: 10px 16px;
+    border-radius: 35px;
+    font-size: 24px;
+    line-height: 1.33;
+    background-color: $default-blue;
+    border: none;
+}
+
+.unlike-btn {
+    width: 70px;
+    height: 70px;
+    padding: 10px 16px;
+    border-radius: 35px;
+    font-size: 24px;
+    line-height: 1.33;
+    background-color: black;
+    color: $default-pink;
+    border: none;
+}
+
+.likes {
+    font-size: 1.5rem;
+    padding-top: 1rem;
+}
+
+.image {
+    width: 100%;
+    height: auto;;
+}
