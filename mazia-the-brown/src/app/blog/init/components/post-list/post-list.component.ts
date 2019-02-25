@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PostService } from 'src/app/blog/shared/services/post.service';
 import { Observable } from 'rxjs';
-import { Key } from 'protractor';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-post-list',
@@ -11,10 +11,21 @@ import { Key } from 'protractor';
 export class PostListComponent implements OnInit {
   posts: Observable<any>;
   liked: boolean = false;
+  url;
+  admin = false;
 
-  constructor(private postService: PostService) { }
+  constructor(
+    private router: Router,
+    private postService: PostService
+  ) { }
 
   ngOnInit() {
+    this.url = this.router.url.substring(0, 10)
+    if (this.url === '/init/dash') {
+      this.admin = true
+    } else {
+      this.admin = false
+    }
     this.posts = this.postService.getPosts();
   }
 
