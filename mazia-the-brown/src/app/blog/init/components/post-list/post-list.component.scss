@@ -2,11 +2,20 @@
 @import '../../../shared/scss/texts_styles';
 
 .box {
-    border-radius: 1rem;;
     padding: 2rem 3rem 2rem 3rem;
     margin-bottom: 2rem;
     margin-top: 2rem;
-    background-color: $default-light-gray;
+    background-color: $deafult-dark-aqua-blue;
+}
+
+.filter-sect {
+    z-index: 99;
+}
+
+.posts-sect {
+    max-height: 25rem;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .box:first-child {
@@ -18,24 +27,22 @@
 }
 
 .post-title {
-    font-size: 3rem;
-}
-
-.post-content {
     font-size: 2rem;
 }
 
-.poster {
+.post-content {
     font-size: 1.5rem;
+}
+
+.poster {
+    font-size: 1rem;
 }
 
 .category {
-    font-size: 1.5rem;
+    font-size: 1rem;
 }
 
 .like-btn {
-    width: 70px;
-    height: 70px;
     padding: 10px 16px;
     border-radius: 35px;
     font-size: 24px;
@@ -45,8 +52,6 @@
 }
 
 .unlike-btn {
-    width: 70px;
-    height: 70px;
     padding: 10px 16px;
     border-radius: 35px;
     font-size: 24px;
@@ -64,4 +69,14 @@
 .image {
     width: 100%;
     height: auto;;
+}
+
+.register-input {
+    background-color: $default-dark-gray2;
+    border: none;
+    color: $deafult-light-aqua-blue;
+}
+
+.input-label {
+    font-size: 1.2rem;
 }

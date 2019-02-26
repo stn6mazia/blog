@@ -1,0 +1,46 @@
+@import '../../../shared/scss/texts_styles';
+@import '../../../shared/scss/default-colors';
+
+#form {
+    background-color:$default-black;
+    color: $deafult-aqua-blue;
+}
+
+.input-sect {
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+}
+
+.input-label {
+    font-size: 1.2rem;
+}
+
+.input-style {
+    background-color: $default-dark-gray2;
+    border: none;
+    color: $deafult-light-aqua-blue;
+}
+
+.register-input {
+    background-color: $default-dark-gray2;
+    border: none;
+    color: $deafult-light-aqua-blue;
+}
+
+.btn-sect {
+    padding-top: 1.5rem;
+    padding-bottom: 2rem;
+    text-align: center;
+}
+
+.btn-post {
+    background-color:  $deafult-light-aqua-blue;
+    padding: 0.8rem;
+    width: 100%;
+    color: $default-black;
+}
+
+.btn-danger {
+    padding: 0.8rem;
+    width: 100%;
+}

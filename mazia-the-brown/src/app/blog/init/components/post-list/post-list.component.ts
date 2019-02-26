@@ -13,6 +13,7 @@ export class PostListComponent implements OnInit {
   liked: boolean = false;
   url;
   admin = false;
+  filter: string;
 
   constructor(
     private router: Router,
@@ -20,6 +21,7 @@ export class PostListComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.filter = 'Sem Categoria'
     this.url = this.router.url.substring(0, 10)
     if (this.url === '/init/dash') {
       this.admin = true

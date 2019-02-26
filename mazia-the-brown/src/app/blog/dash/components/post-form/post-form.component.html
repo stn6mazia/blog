@@ -5,42 +5,42 @@
         <form (ngSubmit)="onSubmit()">
           <div class="row">
             <div class="col-12">
-              <div class="form-group">
-                <label>Post Title</label>
-                <input [(ngModel)]="post.title" name="title" class="form-control">
+              <div class="form-group input-sect">
+                <label class="input-label">Post Title</label>
+                <input [(ngModel)]="post.title" name="title" class="form-control input-style">
               </div>
             </div>
           </div>
           <div class="row">
             <div class="col-12">
-              <div class="form-group">
-                <label>Image Link</label>
-                <input [(ngModel)]="post.postImage" name="postImage" class="form-control">
+              <div class="form-group input-sect">
+                <label class="input-label">Image Link</label>
+                <input [(ngModel)]="post.postImage" name="postImage" class="form-control input-style">
               </div>
             </div>
           </div>
           <div class="row">
             <div class="col-12">
-              <div class="form-group">
-                <label>Post Content</label>
-                <textarea [(ngModel)]="post.content" rows="8" cols="50" name="content" class="form-control"></textarea>
+              <div class="form-group input-sect">
+                <label class="input-label">Post Content</label>
+                <textarea [(ngModel)]="post.content" rows="6" cols="50" name="content" class="form-control input-style"></textarea>
               </div>
             </div>
           </div>
           <div class="row">
             <div class="col-12">
-              <div class="form-group">
-                <label>Post Author</label>
-                <input [(ngModel)]="post.author" name="author" class="form-control">
+              <div class="form-group input-sect">
+                <label class="input-label">Post Author</label>
+                <input [(ngModel)]="post.author" name="author" class="form-control input-style">
               </div>
             </div>
           </div>
           <div class="row">
             <div class="col-12">
-              <div class="form-group">
-                <label>Category</label>
+              <div class="form-group input-sect">
+                <label class="input-label">Category</label>
                 <select required class="form-control register-input" [(ngModel)]="post.category" name="category">
-                  <option selected></option>
+                  <option value="Sem Categoria" selected></option>
                   <option value="Filmes">Filmes</option>
                   <option value="Música">Música</option>
                   <option value="Paternidade">Paternidade</option>
@@ -51,8 +51,13 @@
               </div>
             </div>
           </div>
-          <div class="col-12">
-            <input type="submit" class="btn btn-primary" value="Submit">
+          <div class="row btn-sect">
+            <div class="col">
+              <input type="submit" class="btn btn-post" value="Send Post">
+            </div>
+            <div class="col">
+              <button class="btn btn-danger" routerLink="/init">Cancelar</button>
+            </div>
           </div>
         </form>
       </div>

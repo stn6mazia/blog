@@ -1,49 +1,72 @@
 <div id="post-list">
   <div class="container">
-    <div class="row">
-      <div class="col-12 box" *ngFor="let post of posts | async">
-        <div class="row">
-          <div class="col-8">
-            <a routerLink="/init/mazia-the-brown/post/{{post.key}}" class="no-decoration">
-              <h2 class="post-title">{{ post.title }}</h2>
-            </a>
-          </div>
-          <div *ngIf="admin === true" class="col-2">
-            <button class="edit-btn btn btn-primary"><i class="fas fa-edit"></i></button>
-          </div>
-          <div *ngIf="admin === true" class="col-2">
-            <button (click)="deletePost(post.key)" class="delete-btn btn btn-danger"><i class="fas fa-trash-alt"></i></button>
-          </div>
+    <div class="row filter-sect">
+      <div class="col-12">
+        <div class="form-group input-sect">
+          <label class="input-label">Category</label>
+          <select required class="form-control register-input" [(ngModel)]="filter" name="category">
+            <option value="Sem Categoria" selected></option>
+            <option value="Filmes">Filmes</option>
+            <option value="Música">Música</option>
+            <option value="Paternidade">Paternidade</option>
+            <option value="Series">Series</option>
+            <option value="Cotidiano">Cotidiano</option>
+            <option value="Sem Categoria">Sem Categoria</option>
+          </select>
         </div>
-        <div class="img">
-          <img src="{{ post.postImage }}" class="image">
-        </div>
-        <div class="content">
-          <p class="post-content">
-            {{ post.content }}
-          </p>
-        </div>
-        <div class="row">
-          <div class="col">
-            <p class="poster">
-              Escrito por: {{ post.author }}
-            </p>
-          </div>
-          <div class="col">
-            <p class="category">
-              Classificado como: {{ post.category }}
-            </p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-5">
+      </div>
+    </div>
+    <div class="row posts-sect">
+      <div *ngFor="let post of posts | async">
+        <div class="col-12 box" *ngIf="post.category === filter || filter === 'Sem Categoria'">
+          <div class="filtered">
+            <div class="row">
+              <div class="col-8">
+                <a routerLink="/init/mazia-the-brown/post/{{post.key}}" class="no-decoration">
+                  <h2 class="post-title">{{ post.title }}</h2>
+                </a>
+              </div>
+              <div *ngIf="admin === true" class="col-2">
+                <button class="edit-btn btn btn-primary"><i class="fas fa-edit"></i></button>
+              </div>
+              <div *ngIf="admin === true" class="col-2">
+                <button (click)="deletePost(post.key)" class="delete-btn btn btn-danger"><i
+                    class="fas fa-trash-alt"></i></button>
+              </div>
+            </div>
+            <div class="img">
+              <img src="{{ post.postImage }}" class="image">
+            </div>
+            <div class="content">
+              <p class="post-content">
+                {{ post.content }}
+              </p>
+            </div>
             <div class="row">
               <div class="col">
-                <button *ngIf="liked === false" class="like-btn" (click)="likeitem()" ><i class="fas fa-heart"></i></button>
-                <button *ngIf="liked === true" class="unlike-btn" (click)="unlikeitem()" ><i class="fas fa-heart"></i></button>
-                <span class="likes">
-                  Likes Count: {{ post.likes }}
-                </span>
+                <p class="poster">
+                  Escrito por: {{ post.author }}
+                </p>
+              </div>
+              <div class="col">
+                <p class="category">
+                  Classificado como: {{ post.category }}
+                </p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-5">
+                <div class="row">
+                  <div class="col">
+                    <button *ngIf="liked === false" class="like-btn" (click)="likeitem()"><i
+                        class="fas fa-heart"></i></button>
+                    <button *ngIf="liked === true" class="unlike-btn" (click)="unlikeitem()"><i
+                        class="fas fa-heart"></i></button>
+                    <span class="likes">
+                      Likes Count: {{ post.likes }}
+                    </span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
