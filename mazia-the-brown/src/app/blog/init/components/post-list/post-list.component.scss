@@ -2,10 +2,15 @@
 @import '../../../shared/scss/texts_styles';
 
 .box {
-    padding: 2rem 3rem 2rem 3rem;
     margin-bottom: 2rem;
     margin-top: 2rem;
-    background-color: $deafult-dark-aqua-blue;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    background-position: center;
+}
+
+.filtered {
+    background-color: rgba(41, 41, 41, 0.336);
 }
 
 .filter-sect {
@@ -13,33 +18,32 @@
 }
 
 .posts-sect {
+    background-color: $deafult-dark-aqua-blue2;
+    padding-left: 1rem;
+    padding-right: 1rem;
     max-height: 25rem;
     overflow-y: auto;
     overflow-x: hidden;
 }
 
-.box:first-child {
-    margin-top: 0;
-}
-
-.box:last-child {
-    margin-bottom: 0;
-}
-
 .post-title {
     font-size: 2rem;
+    color: $default-white;
 }
 
 .post-content {
     font-size: 1.5rem;
+    color: $default-white;
 }
 
 .poster {
     font-size: 1rem;
+    color: $default-white;
 }
 
 .category {
     font-size: 1rem;
+    color: $default-white;
 }
 
 .like-btn {
@@ -47,7 +51,8 @@
     border-radius: 35px;
     font-size: 24px;
     line-height: 1.33;
-    background-color: $default-blue;
+    color: $deafult-light-aqua-blue;
+    background-color: transparent;
     border: none;
 }
 
@@ -56,7 +61,7 @@
     border-radius: 35px;
     font-size: 24px;
     line-height: 1.33;
-    background-color: black;
+    background-color: transparent;
     color: $default-pink;
     border: none;
 }
@@ -64,6 +69,7 @@
 .likes {
     font-size: 1.5rem;
     padding-top: 1rem;
+    color: $default-white;
 }
 
 .image {

@@ -25,14 +25,30 @@ export class PostFormComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    console.log(this.filter)
     this.post = new Post();
+    this.dataService.currentPost.subscribe(data => {
+      if (data.post && data.key) {
+        this.key = data.key;
+        this.post.title = data.post.title
+        this.post.content = data.post.content
+        this.post.author = data.post.author
+        this.post.category = data.post.category
+        this.post.postImage = data.post.postImage
+        this.post.postDate = data.post.postDate
+        this.post.likes = data.post.likes + 1
+      }
+    })
   }
 
   onSubmit() {
-    this.postService.createPost(this.post);
+    if (this.key) {
+      this.postService.updatePost(this.post, this.key)
+      this.router.navigateByUrl('/init')
+    } else {
+      this.postService.createPost(this.post);
+      this.router.navigateByUrl('/init')
+    }
     this.post = new Post();
-    this.router.navigateByUrl('/init')
   }
 
 }

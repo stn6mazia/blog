@@ -16,9 +16,9 @@
         </div>
       </div>
     </div>
-    <div class="row posts-sect">
-      <div *ngFor="let post of posts | async">
-        <div class="col-12 box" *ngIf="post.category === filter || filter === 'Sem Categoria'">
+    <div class="posts-sect container">
+      <div class="row" *ngFor="let post of posts | async">
+        <div class="col-12 box" [ngStyle]="{ 'background-image' : 'url(' + post.postImage + ')' }" *ngIf="post.category === filter || filter === 'Sem Categoria'">
           <div class="filtered">
             <div class="row">
               <div class="col-8">
@@ -27,15 +27,12 @@
                 </a>
               </div>
               <div *ngIf="admin === true" class="col-2">
-                <button class="edit-btn btn btn-primary"><i class="fas fa-edit"></i></button>
+                <button (click)="edit(post, post.key)" class="edit-btn btn btn-primary"><i class="fas fa-edit"></i></button>
               </div>
               <div *ngIf="admin === true" class="col-2">
                 <button (click)="deletePost(post.key)" class="delete-btn btn btn-danger"><i
                     class="fas fa-trash-alt"></i></button>
               </div>
-            </div>
-            <div class="img">
-              <img src="{{ post.postImage }}" class="image">
             </div>
             <div class="content">
               <p class="post-content">
@@ -58,12 +55,12 @@
               <div class="col-5">
                 <div class="row">
                   <div class="col">
-                    <button *ngIf="liked === false" class="like-btn" (click)="likeitem()"><i
+                    <button *ngIf="liked === false" class="like-btn" (click)="likeitem(); post.likes = sumLike + post.likes; updatePoints(post, post.key)"><i
                         class="fas fa-heart"></i></button>
-                    <button *ngIf="liked === true" class="unlike-btn" (click)="unlikeitem()"><i
+                    <button *ngIf="liked === true" class="unlike-btn" (click)="unlikeitem(); post.likes = post.likes - sumLike; updatePoints(post, post.key)"><i
                         class="fas fa-heart"></i></button>
                     <span class="likes">
-                      Likes Count: {{ post.likes }}
+                      {{ post.likes }}
                     </span>
                   </div>
                 </div>
